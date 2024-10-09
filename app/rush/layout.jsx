@@ -6,7 +6,7 @@ export default function Layout({ children }) {
   return (
     <div className="h-screen flex flex-col justify-between">
       <Header />
-      <div className={`${inter.className} antialiased`}>{children}</div>
+      <div className={`${inter.className} antialiased py-20`}>{children}</div>
       <Footer />
     </div>
   );

@@ -1,7 +1,7 @@
 export default function ContactForm() {
   return (
     <form action="" className="col-span-2 flex flex-col gap-y-4 justify-center">
-      <h1 className="text-4xl font-semibold text-darkGray">Contact Us</h1>
+      <h1 className="text-3xl font-bold">Contact Us</h1>
 
       <div className="flex gap-x-8 text-darkGray">
         <div className="grow flex flex-col gap-y-2">

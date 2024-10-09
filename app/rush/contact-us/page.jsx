@@ -12,7 +12,7 @@ export default function Page() {
   ];
 
   return (
-    <main className="grid grid-cols-3 w-fit m-auto gap-x-24 py-24">
+    <main className="grid grid-cols-3 w-fit m-auto gap-x-24">
       <ul className="list-disc text-darkGray space-y-2">
         {requests.map((request, index) => (
           <li key={index}>{request}</li>
