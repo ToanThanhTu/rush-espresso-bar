@@ -1,55 +1,82 @@
 "use client";
 
-import useWindowDimensions from "@/app/lib/utils";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export default function NavBackground() {
-  const { height, width } = useWindowDimensions();
+  const pathname = usePathname();
+  
+  const imageStyle = "animate-fadein object-cover col-span-1 overflow-hidden contrast-75 w-full"
 
-  const imgWidth = width / 2;
-  const imgHeight = imgWidth / 2; // images aspect ratio is 2:1
+  if (pathname === '/rush/menu') {
+    return (
+      <Image
+          src="/home/nav-background-coffee.png"
+          alt="coffee image"
+          width={1000}
+          height={500}
+          className={`${imageStyle} h-[300px]`}
+        />
+    )
+  };
+
+  if (pathname === '/rush/contact-us') {
+    return (
+      <Image
+          src="/home/nav-background-latte.png"
+          alt="coffee image"
+          width={1000}
+          height={500}
+          className={`${imageStyle} h-[300px]`}
+        />
+    )
+  };
+
+  if (pathname === '/rush/jobs') {
+    return (
+      <Image
+          src="/home/nav-background-food.png"
+          alt="coffee image"
+          width={1000}
+          height={500}
+          className={`${imageStyle} h-[400px]`}
+        />
+    )
+  };
 
   return (
-    <div className="grid grid-cols-2 gap-4 min-w-[900px] contrast-75">
-      <div className="col-span-1 h-[250px] overflow-hidden">
+    <div className="grid grid-cols-2 md:gap-4 gap-2">
         <Image
           src="/home/nav-background-coffee.png"
           alt="coffee image"
-          width={imgWidth}
-          height={imgHeight}
-          className="object-cover w-full"
+          width={1000}
+          height={500}
+          className={`${imageStyle} md:h-[250px]`}
         />
-      </div>
 
-      <div className="col-span-1 h-[250px] overflow-hidden">
         <Image
           src="/home/nav-background-latte.png"
           alt="food image"
-          width={imgWidth}
-          height={imgHeight}
-          className="object-cover rotate-180"
+          width={1000}
+          height={500}
+          className={`${imageStyle} md:h-[250px]`}
         />
-      </div>
 
-      <div className="col-span-1 h-[250px] overflow-hidden">
         <Image
           src="/home/nav-background-food.png"
           alt="latte image"
-          width={imgWidth}
-          height={imgHeight}
-          className="object-cover"
+          width={1000}
+          height={500}
+          className={`${imageStyle} md:h-[250px]`}
         />
-      </div>
 
-      <div className="col-span-1 h-[250px] overflow-hidden">
         <Image
           src="/home/nav-background-pizza.png"
           alt="pizza image"
-          width={imgWidth}
-          height={imgHeight}
-          className="object-cover"
+          width={1000}
+          height={500}
+          className={`${imageStyle} md:h-[250px]`}
         />
-      </div>
     </div>
   );
 }

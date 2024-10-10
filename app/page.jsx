@@ -11,14 +11,15 @@ function Home() {
         width={3000}
         height={2000}
         className="contrast-75 h-full object-none"
+        alt="Background Coffee Image"
       />
 
       <div className="absolute top-10 scale-125">
         <RushLogo />
       </div>
 
-      <div className={`absolute top-1/2 flex flex-col items-center justify-center gap-4 ${worksans.className} antialiased text-xl`}>
-        <p className="italic">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod.</p>
+      <div className={`absolute top-1/3 md:top-1/2 flex flex-col items-center justify-center gap-4 ${worksans.className} antialiased text-xl`}>
+        <p className="italic text-center px-16 md:pb-0 pb-8">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod.</p>
         <SiteMenu />
       </div>
     </main>

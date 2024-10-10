@@ -256,7 +256,7 @@ export const menu = [
     ],
   },
   {
-    header: "Iced Coffee/ Cold Beverage",
+    header: "Iced Coffee/Cold Beverage",
     items: [
       {
         name: "Iced Mocha",

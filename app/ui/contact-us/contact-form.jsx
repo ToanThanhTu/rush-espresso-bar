@@ -1,14 +1,12 @@
 export default function ContactForm() {
   return (
     <form action="" className="col-span-2 flex flex-col gap-y-4 justify-center">
-      <h1 className="text-3xl font-bold">Contact Us</h1>
-
-      <div className="flex gap-x-8 text-darkGray">
-        <div className="grow flex flex-col gap-y-2">
+      <div className="grid grid-cols-2 gap-6 text-darkGray">
+        <div className="flex flex-col gap-y-2">
           <label htmlFor="firstname">First Name</label>
           <input type="text" name="firstname" id="firstname" />
         </div>
-        <div className="grow flex flex-col gap-y-2">
+        <div className="flex flex-col gap-y-2">
           <label htmlFor="lastname">Last Name</label>
           <input type="text" name="lastname" id="lastname" />
         </div>

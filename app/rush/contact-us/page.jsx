@@ -12,13 +12,17 @@ export default function Page() {
   ];
 
   return (
-    <main className="grid grid-cols-3 w-fit m-auto gap-x-24">
-      <ul className="list-disc text-darkGray space-y-2">
-        {requests.map((request, index) => (
-          <li key={index}>{request}</li>
-        ))}
-      </ul>
-      <ContactForm />
+    <main className="m-auto w-fit space-y-6 px-6">
+      <h1 className="text-3xl font-bold">Contact Us</h1>
+
+      <div className="md:grid md:grid-cols-3 md:gap-x-20 md:space-y-0 m-auto space-y-6">
+        <ul className="list-disc list-inside text-darkGray space-y-2">
+          {requests.map((request, index) => (
+            <li key={index}>{request}</li>
+          ))}
+        </ul>
+        <ContactForm />
+      </div>
     </main>
   );
 }
