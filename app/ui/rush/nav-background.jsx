@@ -11,7 +11,7 @@ export default function NavBackground() {
   if (pathname === '/rush/menu') {
     return (
       <Image
-          src="/home/nav-background-coffee.png"
+          src="/rush/nav-background-coffee.png"
           alt="coffee image"
           width={1000}
           height={500}
@@ -23,7 +23,7 @@ export default function NavBackground() {
   if (pathname === '/rush/contact-us') {
     return (
       <Image
-          src="/home/nav-background-latte.png"
+          src="/rush/nav-background-latte.png"
           alt="coffee image"
           width={1000}
           height={500}
@@ -35,7 +35,7 @@ export default function NavBackground() {
   if (pathname === '/rush/jobs') {
     return (
       <Image
-          src="/home/nav-background-food.png"
+          src="/rush/nav-background-food.png"
           alt="coffee image"
           width={1000}
           height={500}
@@ -47,7 +47,7 @@ export default function NavBackground() {
   return (
     <div className="grid grid-cols-2 md:gap-4 gap-2">
         <Image
-          src="/home/nav-background-coffee.png"
+          src="/rush/nav-background-coffee.png"
           alt="coffee image"
           width={1000}
           height={500}
@@ -55,7 +55,7 @@ export default function NavBackground() {
         />
 
         <Image
-          src="/home/nav-background-latte.png"
+          src="/rush/nav-background-latte.png"
           alt="food image"
           width={1000}
           height={500}
@@ -63,7 +63,7 @@ export default function NavBackground() {
         />
 
         <Image
-          src="/home/nav-background-food.png"
+          src="/rush/nav-background-food.png"
           alt="latte image"
           width={1000}
           height={500}
@@ -71,7 +71,7 @@ export default function NavBackground() {
         />
 
         <Image
-          src="/home/nav-background-pizza.png"
+          src="/rush/nav-background-pizza.png"
           alt="pizza image"
           width={1000}
           height={500}
