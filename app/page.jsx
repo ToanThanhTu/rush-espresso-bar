@@ -12,6 +12,7 @@ function Home() {
         height={2000}
         className="contrast-75 h-full object-none"
         alt="Background Coffee Image"
+        priority
       />
 
       <div className="absolute top-10 scale-125">

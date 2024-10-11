@@ -18,7 +18,8 @@ export const info = {
   `,
   jobs: `We are always looking for for hard-working and reliable people to join our team. If you like coffee and nice people drop us a line at`,
   phone: "(+61) 421 916 354",
-  email: "hello@rushespressobar.com",
+  email: "rush.espresso.syd@gmail.com",
+  instagramId: "rush.espresso.bar",
   address: "162 Goulburn St, Surry Hills NSW 2010",
   hours: "6:30 am - 3:00 pm",
 };

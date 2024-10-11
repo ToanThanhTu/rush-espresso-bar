@@ -1,24 +1,44 @@
-import { useState, useEffect } from 'react';
+'use client';
 
-function getWindowDimensions() {
+import { useState, useEffect } from "react";
+
+const getWindowDimensions = () => {
   const { innerWidth: width, innerHeight: height } = window;
   return {
     width,
-    height
+    height,
   };
-}
+};
 
-export default function useWindowDimensions() {
-  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+export const useWindowDimensions = () => {
+  const [windowDimensions, setWindowDimensions] = useState(
+    getWindowDimensions()
+  );
 
   useEffect(() => {
-    function handleResize() {
+    const handleResize = () => {
       setWindowDimensions(getWindowDimensions());
-    }
+    };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return windowDimensions;
-}
+};
+
+export const sendContactForm = (formData) => {
+  const apiUrl = "/api/email";
+
+  fetch(apiUrl, {
+    method: "POST",
+    body: JSON.stringify(formData),
+  })
+    .then((res) => res.json())
+    .then((response) => {
+      alert(response.message);
+    })
+    .catch((error) => {
+      alert(error);
+    });
+};

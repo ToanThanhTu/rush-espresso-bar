@@ -16,6 +16,7 @@ export default function NavBackground() {
           width={1000}
           height={500}
           className={`${imageStyle} h-[300px]`}
+          priority
         />
     )
   };
@@ -28,6 +29,7 @@ export default function NavBackground() {
           width={1000}
           height={500}
           className={`${imageStyle} h-[300px]`}
+          priority
         />
     )
   };
@@ -40,6 +42,7 @@ export default function NavBackground() {
           width={1000}
           height={500}
           className={`${imageStyle} h-[400px]`}
+          priority
         />
     )
   };
@@ -52,6 +55,7 @@ export default function NavBackground() {
           width={1000}
           height={500}
           className={`${imageStyle} md:h-[250px]`}
+          priority
         />
 
         <Image
@@ -60,6 +64,7 @@ export default function NavBackground() {
           width={1000}
           height={500}
           className={`${imageStyle} md:h-[250px]`}
+          priority
         />
 
         <Image
@@ -68,6 +73,7 @@ export default function NavBackground() {
           width={1000}
           height={500}
           className={`${imageStyle} md:h-[250px]`}
+          priority
         />
 
         <Image
@@ -76,6 +82,7 @@ export default function NavBackground() {
           width={1000}
           height={500}
           className={`${imageStyle} md:h-[250px]`}
+          priority
         />
     </div>
   );
