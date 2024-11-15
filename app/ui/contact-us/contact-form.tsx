@@ -27,6 +27,7 @@ export default function ContactForm() {
             type="text"
             id="name"
             required
+            autoComplete="name"
             {...register("name", { required: true })}
           />
         </div>
@@ -36,6 +37,7 @@ export default function ContactForm() {
             type="email"
             id="email"
             required
+            autoComplete="email"
             {...register("email", { required: true })}
           />
         </div>
@@ -46,6 +48,7 @@ export default function ContactForm() {
         <input
           type="tel"
           id="phone"
+          autoComplete="phone"
           {...register("phone")}
         />
       </div>
@@ -56,6 +59,7 @@ export default function ContactForm() {
           type="text"
           id="subject"
           required
+          autoComplete="subject"
           {...register("subject", { required: true })}
         />
       </div>
@@ -63,8 +67,9 @@ export default function ContactForm() {
       <div className="flex flex-col gap-y-2 text-darkGray">
         <label htmlFor="enquiry">Enquiry</label>
         <textarea
-          id="message"
+          id="enquiry"
           required
+          autoComplete="enquiry"
           {...register("enquiry", { required: true })}
         />
       </div>
