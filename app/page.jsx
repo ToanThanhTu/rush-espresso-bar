@@ -1,4 +1,3 @@
-import { worksans } from "@/app/ui/fonts";
 import RushLogo from "@/app/ui/rush-logo";
 import SiteMenu from "@/app/ui/rush/site-menu";
 import Image from "next/image";
