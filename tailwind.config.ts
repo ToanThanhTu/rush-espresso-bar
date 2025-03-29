@@ -1,47 +1,57 @@
-import type { Config } from "tailwindcss";
-
-import plugin from "tailwindcss/plugin";
+import type { Config } from "tailwindcss"
+import TailwindAnimatePlugin from "tailwindcss-animate"
+import plugin from "tailwindcss/plugin"
 
 export default {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       colors: {
         primary: {
-          background: "#eeeeee",
-          foreground: "#cf0a0a",
+          DEFAULT: "hsl(var(--primary))",
         },
-        footer: {
-          first: "#cf0a0a",
-          second: "#000000",
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
         },
-        light: "#ffffff",
-        gray: "#c2c2c2",
-        darkGray: "#5c5c5c",
-        dark: "#000000",
+        background: {
+          DEFAULT: "hsl(var(--background))",
+          secondary: "hsl(var(--background-secondary))",
+        },        
+        foreground: {
+          DEFAULT: "hsl(var(--foreground))",
+          secondary: "hsl(var(--foreground-secondary))",
+        },
+        active: {
+          DEFAULT: "hsl(var(--active))",
+          foreground: "hsl(var(--active-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        black: {
+          DEFAULT: "hsl(var(--black))",
+        },
+        white: {
+          DEFAULT: "hsl(var(--white))",
+        },
+        stroke: {
+          DEFAULT: "hsl(var(--stroke))",
+        },        
       },
       textShadow: {
-        sm: "0 1px 2px var(--tw-shadow-color)",
-        DEFAULT: "0 2px 4px var(--tw-shadow-color)",
-        lg: "0 8px 16px var(--tw-shadow-color)",
+        sm: "0 1px 2px var(--primary)",
+        DEFAULT: "0 2px 4px var(--primary)",
+        lg: "0 8px 16px var(--primary)",
       },
-      animation: {
-        fadein: "fadeIn .3s ease-in-out",
-        fadeout: "fadeOut .5s ease-out",
-      },
-      keyframes: {
-        fadeIn: {
-          from: { opacity: "0" },
-          to: { opacity: "1" },
-        },
-        fadeOut: {
-          from: { opacity: "1" },
-          to: { opacity: "0" },
-        },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
       },
     },
   },
@@ -56,7 +66,8 @@ export default {
         {
           values: theme("textShadow"),
         }
-      );
+      )
     }),
+    TailwindAnimatePlugin,
   ],
-} satisfies Config;
+} satisfies Config

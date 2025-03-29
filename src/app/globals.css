@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+:root {
+  --primary: hsl(10, 68%, 53%);
+  --secondary: hsl(100, 9%, 93%);
+  --background: hsl(100, 9%, 93%);
+  --background-secondary: hsl(240 5.9% 10%);
+  --foreground: hsl(240 10% 3.9%);
+  --foreground-secondary: hsl(100, 9%, 93%);
+  --active: hsl(142.8 64.2% 24.1%);
+  --active-foreground: hsl(138.5 76.5% 96.7%);
+  --destructive: hsl(0 70% 35.3%);
+  --destructive-foreground: hsl(0 85.7% 97.3%);
+  --black: hsl(240 10% 3.9%);
+  --white: hsl(100, 9%, 93%);
+  --stroke: hsl(240 10% 3.9%);
+}
+
+@theme inline {
+  /* Color theme */
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-background: var(--background);
+  --color-background-secondary: var(--background-secondary);
+  --color-foreground: var(--foreground);
+  --color-foreground-secondary: var(--foreground-secondary);
+  --color-active: var(--active);
+  --color-active-foreground: var(--active-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);  
+  --color-black: var(--black);
+  --color-white: var(--white);
+  --color-stroke: var(--stroke);
+  --color-linkedin: var(--linkedin);
+}
+
+@layer base {
+  body {
+    @apply bg-background;
+  }
+}
