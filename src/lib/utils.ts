@@ -7,8 +7,8 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-import { ApiResponse } from "@/src/lib/definitions"
 import { useState, useEffect } from "react"
+import { ApiResponse } from "@/lib/types"
 
 const getWindowDimensions = () => {
   const { innerWidth: width, innerHeight: height } = window

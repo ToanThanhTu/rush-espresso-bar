@@ -1,13 +1,12 @@
-"use client"
-
-import GoogleMapComponent from "@/components/google-maps"
 import { info } from "@/lib/data"
 import { cn } from "@/lib/utils"
 import { Clock, MapPin, Phone } from "lucide-react"
 
-export default function Info() {
+export default function Information() {
   return (
-    <section className={cn("flex flex-col gap-12")}>
+    <section className={cn("flex flex-col justify-center items-center gap-12", "md:flex-row")}>
+      <h2 className="text-3xl font-semibold uppercase tracking-wider">Come enjoy us!</h2>
+
       <article className="flex flex-col justify-center items-center gap-4">
         <Clock size={32} color="var(--primary)" />
         <div>
@@ -25,8 +24,6 @@ export default function Info() {
         <MapPin size={32} color="var(--primary)" />
         <p className="text-black">{info.address}</p>
       </article>
-
-      <GoogleMapComponent />
     </section>
   )
 }

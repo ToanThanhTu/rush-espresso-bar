@@ -11,6 +11,7 @@
   "dependencies": {
     "@emotion/react": "^11.13.3",
     "@emotion/styled": "^11.13.0",
+    "@radix-ui/react-slot": "^1.1.2",
     "@tailwindcss/postcss": "^4.0.17",
     "@types/google.maps": "^3.58.1",
     "@types/react-headroom": "^3.2.3",
@@ -18,6 +19,7 @@
     "autoprefixer": "^10.4.21",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "embla-carousel-react": "^8.5.2",
     "google": "link:@next/third-parties/google",
     "lucide-react": "^0.484.0",
     "next": "15.2.4",
@@ -27,9 +29,11 @@
     "react-dom": "19.0.0",
     "react-headroom": "^3.2.1",
     "react-hook-form": "^7.53.2",
+    "react-photo-album": "^3.0.2",
     "tailwind-merge": "^3.0.2",
     "tailwindcss": "^4.0.17",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "yet-another-react-lightbox": "^3.21.8"
   },
   "devDependencies": {
     "@types/node": "^22.9.0",

@@ -4,15 +4,14 @@ import Link from "next/link"
 import { useEffect, useState } from "react"
 import { usePathname } from "next/navigation"
 import clsx from "clsx"
-import { worksans } from "@/fonts"
 import RushLogo from "@/components/logo"
 import { links } from "@/lib/data"
 import { Menu, X } from "lucide-react"
+import { cn } from "@/lib/utils"
 
 export default function NavBarMobile() {
   const [displayNavMenu, setDisplayNavMenu] = useState(false)
   const pathname = usePathname()
-  const [scroll, setScroll] = useState(0)
 
   useEffect(() => {
     if (displayNavMenu) {
@@ -26,27 +25,11 @@ export default function NavBarMobile() {
     }
   }, [displayNavMenu])
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScroll(window.scrollY)
-    }
-
-    window.addEventListener("scroll", handleScroll)
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll)
-    }
-  }, [])
-
   return (
-    <div
-      className={`absolute top-0 flex justify-center w-full text-center ${worksans.className} font-medium`}
-    >
+    <div className="flex justify-center w-full text-center font-medium">
       <button
         onClick={() => setDisplayNavMenu(!displayNavMenu)}
-        className={`top-0 left-0 m-4 text-light z-50 ${
-          scroll > 100 ? "fixed bg-dark rounded" : "absolute"
-        }`}
+        className="fixed top-2 left-0 m-4 text-light z-50"
       >
         {displayNavMenu && <X />}
         {!displayNavMenu && <Menu />}
@@ -57,9 +40,10 @@ export default function NavBarMobile() {
       </Link>
 
       <nav
-        className={`fixed flex flex-col items-center justify-center bg-black text-darkGray h-screen w-screen font-semibold text-2xl gap-4 transition-opacity duration-300 ${
+        className={cn(
+          "fixed inset-0 flex flex-col items-center justify-center bg-black text-darkGray h-screen w-screen font-semibold text-2xl gap-4 transition-opacity duration-300",
           displayNavMenu ? "opacity-100" : "opacity-0 pointer-events-none"
-        }`}
+        )}
       >
         {links.map((link) => (
           <Link

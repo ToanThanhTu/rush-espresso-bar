@@ -1,4 +1,5 @@
 import { worksans } from "@/fonts";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 
 export default function RushLogo() {
@@ -11,10 +12,8 @@ export default function RushLogo() {
         alt="Rush logo"
         width={100}
         height={100}
+        className={cn("h-20 w-20", "md:h-24 md:w-24")}
       />
-      <p className="text-xl font-medium text-shadow shadow-primary-foreground">
-        RUSH ESPRESSO BAR
-      </p>
     </div>
   );
 }

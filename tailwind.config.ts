@@ -25,6 +25,10 @@ export default {
           DEFAULT: "hsl(var(--foreground))",
           secondary: "hsl(var(--foreground-secondary))",
         },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
         active: {
           DEFAULT: "hsl(var(--active))",
           foreground: "hsl(var(--active-foreground))",
