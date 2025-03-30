@@ -1,87 +1,124 @@
-"use client";
+"use client"
 
-import { ContactFormData } from "@/lib/types";
-import { sendContactForm } from "@/lib/utils";
-import { useForm } from "react-hook-form";
+import { Input } from "@/components/shadcn/input"
+import { Label } from "@/components/shadcn/label"
+import { ContactFormData, ContactFormSchema } from "@/lib/types"
+import { cn, sendContactForm } from "@/lib/utils"
+import { useForm } from "react-hook-form"
+import { z } from "zod"
+import { zodResolver } from "@hookform/resolvers/zod"
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/shadcn/form"
+import { Textarea } from "@/components/shadcn/textarea"
+import { Button } from "@/components/shadcn/button"
 
 export default function ContactForm() {
-  const { register, handleSubmit } = useForm<ContactFormData>();
+  const contactForm = useForm<z.infer<typeof ContactFormSchema>>({
+    resolver: zodResolver(ContactFormSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      phone: "",
+      subject: "",
+      enquiry: "",
+    },
+  })
 
-  const onSubmit = (formData: ContactFormData) => {
-    const formDataObj = new FormData();
-    Object.entries(formData).forEach(([key, value]) => {
-      formDataObj.append(key, value);
-    });
-    sendContactForm(formDataObj);
-  };
+  function onSubmit(values: z.infer<typeof ContactFormSchema>) {
+    console.log("Form submitted", values)
+    contactForm.reset()
+  }
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="col-span-2 flex flex-col gap-y-4 justify-center"
-    >
-      <div className="grid grid-cols-2 gap-6 text-darkGray">
-        <div className="flex flex-col gap-y-2">
-          <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            id="name"
-            required
-            autoComplete="name"
-            {...register("name", { required: true })}
-          />
-        </div>
-        <div className="flex flex-col gap-y-2 text-darkGray">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            required
-            autoComplete="email"
-            {...register("email", { required: true })}
-          />
-        </div>
-      </div>
+    <Form {...contactForm}>
+      <form
+        onSubmit={contactForm.handleSubmit(onSubmit)}
+        className={cn("flex flex-col gap-4", "md:col-span-2")}
+      >
+        <h2 className="text-2xl font-semibold">Send us a message</h2>
 
-      <div className="flex flex-col gap-y-2 text-darkGray">
-        <label htmlFor="phone">Phone</label>
-        <input
-          type="tel"
-          id="phone"
-          autoComplete="phone"
-          {...register("phone")}
+        <FormField
+          control={contactForm.control}
+          name="name"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Name</FormLabel>
+              <FormControl>
+                <Input type="text" placeholder="John Doe" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
         />
-      </div>
 
-      <div className="flex flex-col gap-y-2 text-darkGray">
-        <label htmlFor="subject">Subject</label>
-        <input
-          type="text"
-          id="subject"
-          required
-          autoComplete="subject"
-          {...register("subject", { required: true })}
+        <FormField
+          control={contactForm.control}
+          name="email"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Email</FormLabel>
+              <FormControl>
+                <Input type="email" placeholder="john.doe@email.com" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
         />
-      </div>
 
-      <div className="flex flex-col gap-y-2 text-darkGray">
-        <label htmlFor="enquiry">Enquiry</label>
-        <textarea
-          id="enquiry"
-          required
-          autoComplete="enquiry"
-          {...register("enquiry", { required: true })}
+        <FormField
+          control={contactForm.control}
+          name="phone"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Phone</FormLabel>
+              <FormControl>
+                <Input type="tel" placeholder="0401111111" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
         />
-      </div>
 
-      <div>
-        <button
-          type="submit"
-          className="border-2 border-dark px-4 py-2 hover:bg-dark hover:text-light"
-        >
-          SUBMIT
-        </button>
-      </div>
-    </form>
-  );
+        <FormField
+          control={contactForm.control}
+          name="subject"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Subject</FormLabel>
+              <FormControl>
+                <Input type="text" placeholder="The subject of you equiry..." {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+        <FormField
+          control={contactForm.control}
+          name="enquiry"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>Enquiry</FormLabel>
+              <FormControl>
+                <Textarea placeholder="What is you enquiry?" {...field} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+
+          <Button
+            type="submit"
+          >
+            Submit
+          </Button>
+      </form>
+    </Form>
+  )
 }

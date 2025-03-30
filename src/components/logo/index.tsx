@@ -1,3 +1,5 @@
+"use client"
+
 import { worksans } from "@/fonts";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
@@ -5,7 +7,7 @@ import Image from "next/image";
 export default function RushLogo() {
   return (
     <div
-      className={`${worksans.className} flex flex-col items-center w-max text-light tracking-wider`}
+      className="flex flex-col items-center w-max text-light tracking-wider"
     >
       <Image
         src="/rush-logo.png"

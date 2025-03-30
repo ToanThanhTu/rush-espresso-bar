@@ -22,11 +22,10 @@ export default function Header() {
   }, [])
 
   return (
-    <Headroom className="fixed top-0 w-screen z-50">
+    <Headroom>
       <header
         className={cn(
-          "text-white z-40 transition-colors ease-in-out duration-300",
-          scroll > 600 ? "bg-black" : "bg-transparent"
+          "bg-black text-white transition-colors ease-in-out duration-300"
         )}
       >
         <div className="hidden md:block">

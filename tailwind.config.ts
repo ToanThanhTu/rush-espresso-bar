@@ -1,8 +1,8 @@
 import type { Config } from "tailwindcss"
 import TailwindAnimatePlugin from "tailwindcss-animate"
-import plugin from "tailwindcss/plugin"
 
 export default {
+  important: true,
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -13,6 +13,7 @@ export default {
       colors: {
         primary: {
           DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -20,7 +21,7 @@ export default {
         background: {
           DEFAULT: "hsl(var(--background))",
           secondary: "hsl(var(--background-secondary))",
-        },        
+        },
         foreground: {
           DEFAULT: "hsl(var(--foreground))",
           secondary: "hsl(var(--foreground-secondary))",
@@ -45,7 +46,14 @@ export default {
         },
         stroke: {
           DEFAULT: "hsl(var(--stroke))",
-        },        
+        },
+        menu: {
+          DEFAULT: "hsl(var(--menu))",
+          food: "hsl(var(--menu-food))",
+          lunch: "hsl(var(--menu-lunch))",
+          beverages: "hsl(var(--menu-beverage))",
+          desserts: "hsl(var(--menu-dessert))",
+        },
       },
       textShadow: {
         sm: "0 1px 2px var(--primary)",
@@ -59,19 +67,5 @@ export default {
       },
     },
   },
-  plugins: [
-    plugin(function ({ matchUtilities, theme }) {
-      matchUtilities(
-        {
-          "text-shadow": (value) => ({
-            textShadow: value,
-          }),
-        },
-        {
-          values: theme("textShadow"),
-        }
-      )
-    }),
-    TailwindAnimatePlugin,
-  ],
+  plugins: [TailwindAnimatePlugin],
 } satisfies Config

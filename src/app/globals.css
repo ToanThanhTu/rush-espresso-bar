@@ -2,6 +2,7 @@
 
 :root {
   --primary: hsl(10, 68%, 53%);
+  --primary-foreground: hsl(100, 9%, 93%);
   --secondary: hsl(100, 9%, 93%);
   --background: hsl(100, 9%, 93%);
   --background-secondary: hsl(240 5.9% 10%);
@@ -16,11 +17,17 @@
   --black: hsl(240 10% 3.9%);
   --white: hsl(100, 9%, 93%);
   --stroke: hsl(240 10% 3.9%);
+  --menu: hsl(33, 35%, 94%);
+  --menu-food: hsl(240, 85%, 44%);
+  --menu-lunch: hsl(130, 70%, 33%);
+  --menu-beverages: hsl(0, 35%, 20%);
+  --menu-desserts: hsl(335, 67%, 34%);
 }
 
 @theme inline {
   /* Color theme */
   --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-background: var(--background);
   --color-background-secondary: var(--background-secondary);
@@ -35,7 +42,11 @@
   --color-black: var(--black);
   --color-white: var(--white);
   --color-stroke: var(--stroke);
-  --color-linkedin: var(--linkedin);
+  --color-menu: var(--menu);
+  --color-menu-food: var(--menu-food);
+  --color-menu-lunch: var(--menu-lunch);
+  --color-menu-beverages: var(--menu-beverages);
+  --color-menu-desserts: var(--menu-desserts);
 }
 
 @layer base {

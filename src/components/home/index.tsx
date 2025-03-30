@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils"
 
 export default function Home() {
   return (
-    <div className={cn("px-6 flex flex-col gap-20")}>
+    <div className={cn("flex flex-col gap-20")}>
       <About />
       <Events />
       <Gallery />
