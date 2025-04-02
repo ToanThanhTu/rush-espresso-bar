@@ -71,3 +71,5 @@ export const ContactFormSchema = z.object({
   subject: z.string().min(1, { message: "Subject is required" }),
   enquiry: z.string().min(1, { message: "Enquiry is required" }),
 })
+
+export type MediaQuery = "sm" | "md" | "lg" | "xl" | "2xl"

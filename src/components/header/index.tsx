@@ -22,20 +22,23 @@ export default function Header() {
   }, [])
 
   return (
-    <Headroom>
-      <header
-        className={cn(
-          "bg-black text-white transition-colors ease-in-out duration-300"
-        )}
-      >
-        <div className="hidden md:block">
-          <NavBar />
-        </div>
+    <div className="absolute w-full top-0 z-50">
+      <Headroom>
+        <header
+          className={cn(
+            "bg-transparent text-white transition-colors ease-in-out duration-300",
+            scroll > 700 ? "bg-secondary text-foreground shadow-md" : ""
+          )}
+        >
+          <div className="hidden md:block">
+            <NavBar />
+          </div>
 
-        <div className="md:hidden block">
-          <NavBarMobile />
-        </div>
-      </header>
-    </Headroom>
+          <div className="md:hidden block">
+            <NavBarMobile />
+          </div>
+        </header>
+      </Headroom>
+    </div>
   )
 }

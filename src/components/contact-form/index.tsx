@@ -39,7 +39,7 @@ export default function ContactForm() {
     <Form {...contactForm}>
       <form
         onSubmit={contactForm.handleSubmit(onSubmit)}
-        className={cn("flex flex-col gap-4", "md:col-span-2")}
+        className={cn("flex flex-col gap-4 p-4 border rounded-xl", "md:col-span-2")}
       >
         <h2 className="text-2xl font-semibold">Send us a message</h2>
 
@@ -106,7 +106,7 @@ export default function ContactForm() {
             <FormItem>
               <FormLabel>Enquiry</FormLabel>
               <FormControl>
-                <Textarea placeholder="What is you enquiry?" {...field} />
+                <Textarea placeholder="What is you enquiry?" {...field} className="min-h-40" />
               </FormControl>
               <FormMessage />
             </FormItem>

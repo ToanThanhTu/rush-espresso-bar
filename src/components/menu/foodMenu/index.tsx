@@ -23,7 +23,7 @@ export default function FoodMenu() {
   }
 
   return (
-    <article className="relative flex items-start">
+    <article className="relative flex items-start w-full">
       <div className="flex items-center justify-center gap-2 rotate-270 w-9 mt-36">
         {Object.values(FoodCategory).map((category) => (
           <Button
@@ -41,7 +41,7 @@ export default function FoodMenu() {
         ))}
       </div>
 
-      <ul className={cn("border rounded-xl flex flex-col items-start gap-1", menuBorderColor)}>
+      <ul className={cn("border rounded-xl flex flex-col items-start gap-1 grow", menuBorderColor)}>
         {foodMenu[categorySelection].map((section) => (
           <li key={section.header} className="flex flex-col items-start w-full text-center gap-4 even:bg-menu p-4">
             <h2 className="text-xl font-semibold uppercase">{section.header}</h2>

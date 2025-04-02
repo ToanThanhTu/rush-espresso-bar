@@ -11,7 +11,7 @@ export default function Menu() {
   const [menuSelection, setMenuSelection] = useState<MenuType>(MenuType.FOOD)
 
   return (
-    <section className="flex flex-col gap-6 items-center px-4">
+    <section className={cn("flex flex-col gap-6 items-center px-4", "md:w-9/10", "lg:max-w-screen-lg")}>
       <div className="flex items-center justify-center gap-2">
         <Button
           className={cn(

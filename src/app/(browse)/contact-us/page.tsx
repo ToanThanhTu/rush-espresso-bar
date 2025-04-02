@@ -1,20 +1,23 @@
 "use client"
 
 import ContactForm from "@/components/contact-form"
+import GoogleMapComponent from "@/components/google-maps"
 import HeroBanner from "@/components/hero-banner"
+import Information from "@/components/home/information"
 import { info } from "@/lib/data"
 import { cn } from "@/lib/utils"
 import Link from "next/link"
 
 export default function Page() {
   return (
-    <main className="flex flex-col justify-center gap-12">
-      <HeroBanner imageSrc="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-        <h2 className="text-4xl font-bold text-white">Contact Us</h2>
-      </HeroBanner>
+    <main className="flex flex-col justify-center items-center gap-12">
+      <HeroBanner
+        imageSrc="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        title="Contact Us"
+      />
 
-      <div className={cn("flex flex-col gap-8 px-4", "md:grid md:grid-cols-3 md:gap-x-20")}>
-        <ul className="list-disc list-inside text-muted-foreground">
+      <div className={cn("flex flex-col gap-8 px-4", "md:w-5/6 md:max-w-screen-md")}>
+        <ul className="list-disc text-muted-foreground border p-4 pl-10 rounded-xl">
           <li>
             E-mail us at{" "}
             <Link href={`mailto:${info.email}`} target="_blank" className="underline">
@@ -42,8 +45,17 @@ export default function Page() {
           <li>Ask us a question</li>
         </ul>
 
+        <div className="flex items-center gap-4">
+          <div className={cn("w-full h-1 bg-muted")} />
+          <span>or</span>
+          <div className={cn("w-full h-1 bg-muted")} />
+        </div>
+
         <ContactForm />
       </div>
+
+      <GoogleMapComponent />
+      <Information />
     </main>
   )
 }

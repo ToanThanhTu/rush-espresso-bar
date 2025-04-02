@@ -31,7 +31,7 @@ export default function NavBarMobile() {
         onClick={() => setDisplayNavMenu(!displayNavMenu)}
         className="fixed top-2 left-0 m-4 text-light z-50"
       >
-        {displayNavMenu && <X />}
+        {displayNavMenu && <X color="white" />}
         {!displayNavMenu && <Menu />}
       </button>
 
@@ -41,7 +41,7 @@ export default function NavBarMobile() {
 
       <nav
         className={cn(
-          "fixed inset-0 flex flex-col items-center justify-center bg-black text-darkGray h-screen w-screen font-semibold text-2xl gap-4 transition-opacity duration-300",
+          "fixed inset-0 flex flex-col items-center justify-center bg-black text-white h-screen w-screen font-semibold text-2xl gap-4 transition-opacity duration-300",
           displayNavMenu ? "opacity-100" : "opacity-0 pointer-events-none"
         )}
       >

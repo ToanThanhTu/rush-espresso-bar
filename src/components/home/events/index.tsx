@@ -7,31 +7,32 @@ import {
   CarouselPrevious,
 } from "@/components/shadcn/carousel"
 import events from "@/lib/events"
+import { cn } from "@/lib/utils"
 import { CalendarCheck, CircleDollarSign, MapPin, Palette } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 
 export default function Events() {
   return (
-      <section className="flex flex-col items-center justify-center gap-12 px-6">
+      <section className="flex flex-col items-center justify-center gap-12 px-6 py-16 bg-menu">
         <h2 className="text-3xl font-semibold uppercase">What's On</h2>
 
-        <Carousel className="flex flex-col gap-4">
+        <Carousel className="flex flex-col gap-4 max-w-screen-lg">
           <CarouselContent>
             {events.map((event, index) => (
               <CarouselItem key={index}>
-                <Card className="">
-                  <CardContent className="flex aspect-square items-center justify-center px-4">
-                    <div className={"flex flex-col gap-8"}>
+                <Card className="bg-white">
+                  <CardContent className={cn("flex items-center justify-center px-4", "md:px-6")}>
+                    <div className={cn("flex flex-col gap-8", "lg:flex-row")}>
                       <Image
                         src={"https://placehold.co/500x700"}
                         alt={`event 1`}
                         width={500}
                         height={700}
-                        className="object-cover rounded-lg"
+                        className={cn("object-cover rounded-lg w-full", "lg:basis-0 grow")}
                       />
 
-                      <article className="flex flex-col gap-4">
+                      <article className={cn("flex flex-col gap-4", "lg:basis-0 grow")}>
                         <h3 className="text-2xl font-medium">{event.name}</h3>
 
                         <p>{event.description}</p>
@@ -82,8 +83,8 @@ export default function Events() {
           </CarouselContent>
 
           <div className="flex items-center justify-between">
-            <CarouselPrevious className="relative translate-0 left-[calc(50%-40px)]" />
-            <CarouselNext className="relative translate-0 right-[calc(50%-40px)]" />
+            <CarouselPrevious className="relative translate-0 left-[calc(50%-40px)] translate-y-4" />
+            <CarouselNext className="relative translate-0 right-[calc(50%-40px)] translate-y-4" />
           </div>
         </Carousel>
       </section>

@@ -1,62 +1,68 @@
-"use client";
+"use client"
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import clsx from "clsx";
-import { worksans } from "@/fonts";
-import { links } from "@/lib/data";
-import RushLogo from "@/components/logo";
+import Link from "next/link"
+import { usePathname } from "next/navigation"
+import { links } from "@/lib/data"
+import RushLogo from "@/components/logo"
+import { cn } from "@/lib/utils"
 
 export default function NavBar() {
-  const pathname = usePathname();
-
-  const navLinkStyle = "flex items-center justify-center p-5 hover:text-light";
+  const pathname = usePathname()
 
   return (
     <nav
-      className={`absolute top-0 w-full flex items-center justify-center text-center ${worksans.className} font-medium`}
+      className={cn(
+        "w-full h-24 flex items-center justify-center gap-2 px-6 text-center font-semibold",
+        "lg:h-28"
+      )}
     >
-      <div className="flex justify-start w-64 gap-4">
-        <Link
-          href={links[0].href}
-          className={clsx(navLinkStyle, {
-            "text-light": pathname === links[0].href,
-          })}
-        >
-          <p>{links[0].name}</p>
-        </Link>
-        <Link
-          href={links[1].href}
-          className={clsx(navLinkStyle, {
-            "text-light": pathname === links[1].href,
-          })}
-        >
-          <p>{links[1].name}</p>
-        </Link>
-      </div>
+      <Link
+        href={links[0].href}
+        className={cn(
+          "h-full basis-0 grow flex items-center justify-center",
+          "hover:bg-primary hover:text-white",
+          pathname === links[0].href ? "text-primary underline" : ""
+        )}
+      >
+        <p>{links[0].name}</p>
+      </Link>
 
-      <Link href="/">
+      <Link
+        href={links[1].href}
+        className={cn(
+          "h-full basis-0 grow flex items-center justify-center",
+          "hover:bg-primary hover:text-white",
+          pathname === links[1].href ? "text-primary underline" : ""
+        )}
+      >
+        <p>{links[1].name}</p>
+      </Link>
+
+      <Link href="/" className={cn("basis-0 grow")}>
         <RushLogo />
       </Link>
 
-      <div className="flex justify-end w-64 gap-4">
-        <Link
-          href={links[2].href}
-          className={clsx(navLinkStyle, {
-            "text-light": pathname === links[2].href,
-          })}
-        >
-          <p>{links[2].name}</p>
-        </Link>
-        <Link
-          href={links[3].href}
-          className={clsx(navLinkStyle, {
-            "text-light": pathname === links[3].href,
-          })}
-        >
-          <p>{links[3].name}</p>
-        </Link>
-      </div>
+      <Link
+        href={links[2].href}
+        className={cn(
+          "h-full basis-0 grow flex items-center justify-center",
+          "xl:hover:underline",
+          pathname === links[2].href ? "text-primary underline" : ""
+        )}
+      >
+        <p>{links[2].name}</p>
+      </Link>
+
+      <Link
+        href={links[3].href}
+        className={cn(
+          "h-full basis-0 grow flex items-center justify-center",
+          "xl:hover:underline",
+          pathname === links[3].href ? "text-primary underline" : ""
+        )}
+      >
+        <p>{links[3].name}</p>
+      </Link>
     </nav>
-  );
+  )
 }
