@@ -32,7 +32,7 @@ export default function Header() {
       <Headroom>
         <header
           className={cn(
-            "bg-transparent text-white transition-colors ease-in-out duration-300 py-2",
+            "bg-transparent text-white transition-colors ease-in-out duration-300",
             scroll > 800 ? "bg-secondary text-foreground shadow-md" : ""
           )}
         >

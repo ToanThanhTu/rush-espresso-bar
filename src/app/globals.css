@@ -22,6 +22,10 @@
   --menu-lunch: hsl(130, 70%, 33%);
   --menu-beverages: hsl(0, 35%, 20%);
   --menu-desserts: hsl(335, 67%, 34%);
+  --ubereats: hsl(135, 51%, 50%);
+  --ubereats-foreground: hsl(197, 29%, 12%);
+  --menulog: hsl(30, 100%, 50%);
+  --menulog-foreground: hsl(100, 9%, 93%);
 }
 
 @theme inline {
@@ -47,6 +51,10 @@
   --color-menu-lunch: var(--menu-lunch);
   --color-menu-beverages: var(--menu-beverages);
   --color-menu-desserts: var(--menu-desserts);
+  --color-ubereats: var(--ubereats);
+  --color-ubereats-foreground: var(--ubereats-foreground);
+  --color-menulog: var(--menulog);
+  --color-menulog-foreground: var(--menulog-foreground);
 }
 
 @layer base {

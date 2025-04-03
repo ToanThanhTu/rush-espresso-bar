@@ -3,6 +3,7 @@
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 import { motion } from "motion/react"
+import { PropsWithChildren } from "react"
 
 interface Props {
   imageSrc: string
@@ -11,7 +12,13 @@ interface Props {
   subtitle?: string
 }
 
-export default function HeroBanner({ imageSrc, pretitle, title, subtitle }: Props) {
+export default function HeroBanner({
+  imageSrc,
+  pretitle,
+  title,
+  subtitle,
+  children,
+}: PropsWithChildren<Props>) {
   return (
     <section className="relative w-full h-screen">
       <Image
@@ -22,7 +29,7 @@ export default function HeroBanner({ imageSrc, pretitle, title, subtitle }: Prop
         className="object-cover h-full w-full absolute inset-0 z-0"
       />
 
-      <div className="absolute inset-0 bg-black opacity-60 z-10" />
+      <div className="absolute inset-0 bg-black opacity-70 z-10" />
 
       <article className="h-full relative flex flex-col items-center justify-center px-4 z-20">
         <motion.h2
@@ -49,6 +56,15 @@ export default function HeroBanner({ imageSrc, pretitle, title, subtitle }: Prop
         >
           {subtitle}
         </motion.p>
+
+        <motion.div
+          className="mt-6"
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5, delay: 1 }}
+        >
+          {children}
+        </motion.div>
       </article>
     </section>
   )

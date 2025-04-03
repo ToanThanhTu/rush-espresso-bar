@@ -22,7 +22,7 @@ export default function Menu() {
       <div className="flex items-center justify-center gap-2">
         <Button
           className={cn(
-            "rounded-full",
+            "rounded-full", "hover:text-white hover:cursor-pointer",
             menuSelection === MenuType.FOOD ? "" : "bg-secondary text-primary border border-primary"
           )}
           onClick={() => setMenuSelection(MenuType.FOOD)}
@@ -32,7 +32,7 @@ export default function Menu() {
 
         <Button
           className={cn(
-            "rounded-full",
+            "rounded-full", "hover:text-white hover:cursor-pointer",
             menuSelection === MenuType.BEVERAGE
               ? ""
               : "bg-secondary text-primary border border-primary"

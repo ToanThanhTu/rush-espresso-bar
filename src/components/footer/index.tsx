@@ -3,6 +3,7 @@ import { info } from "@/lib/data"
 import { Instagram, Mail, Phone } from "lucide-react"
 import Socials from "@/components/footer/socials"
 import { cn } from "@/lib/utils"
+import Image from "next/image"
 
 export default function Footer() {
   return (
@@ -15,6 +16,12 @@ export default function Footer() {
           <Socials href={`https://www.instagram.com/${info.instagramId}`} icon={<Instagram />} />
           <Socials href={`mailto:${info.email}`} icon={<Mail />} />
           <Socials href={`tel:${info.phone}`} icon={<Phone />} />
+          <Socials href={info.ubereats} icon={
+            <Image src="/ubereats.webp" alt="UberEats logo" width={500} height={500} className="h-10 w-10 rounded-full" />
+          } className="p-0" />
+          <Socials href={info.menulog} icon={
+            <Image src="/menulog.svg" alt="Menulog logo" width={500} height={500} className="h-10 w-10 rounded-full" />
+          } className="p-0" />
         </article>
 
         <div className={cn("flex flex-col gap-8", "md:flex-row md:justify-between")}>

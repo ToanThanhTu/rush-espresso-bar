@@ -15,11 +15,13 @@ export default function BeverageMenu() {
       bg: "bg-menu-beverages",
       text: "text-menu-beverages",
       border: "border-menu-beverages",
+      hover: "hover:bg-menu-beverages hover:text-white",
     },
     [BeverageCategory.DESSERTS]: {
       bg: "bg-menu-desserts",
       text: "text-menu-desserts",
       border: "border-menu-desserts",
+      hover: "hover:bg-menu-desserts hover:text-white",
     },
   }
 
@@ -37,6 +39,7 @@ export default function BeverageMenu() {
             onClick={() => handleCategoryChange(category)}
             className={cn(
               `rounded-t-2xl rounded-b-none text-sm font-medium`,
+              `${categoryColors[category].hover} hover:cursor-pointer`,
               categorySelection === category
                 ? `${categoryColors[category].bg} text-white`
                 : `bg-white ${categoryColors[category].text} border ${categoryColors[category].border} border-b-0`

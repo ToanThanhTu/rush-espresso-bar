@@ -9,12 +9,18 @@ export default function FoodMenu() {
   const [menuBorderColor, setMenuBorderColor] = useState<string>("border-menu-food")
 
   const categoryColors = {
+    [FoodCategory.FOOD]: {
+      bg: "bg-menu-food",
+      text: "text-menu-food",
+      border: "border-menu-food",
+      hover: "hover:bg-menu-food hover:text-white",
+    },
     [FoodCategory.LUNCH]: {
       bg: "bg-menu-lunch",
       text: "text-menu-lunch",
       border: "border-menu-lunch",
+      hover: "hover:bg-menu-lunch hover:text-white",
     },
-    [FoodCategory.FOOD]: { bg: "bg-menu-food", text: "text-menu-food", border: "border-menu-food" },
   }
 
   const handleCategoryChange = (category: FoodCategory) => {
@@ -30,7 +36,8 @@ export default function FoodMenu() {
             key={category}
             onClick={() => handleCategoryChange(category)}
             className={cn(
-              `rounded-t-2xl rounded-b-none text-sm font-medium`,
+              "rounded-t-2xl rounded-b-none text-sm font-medium",
+              `${categoryColors[category].hover} hover:cursor-pointer`,
               categorySelection === category
                 ? `${categoryColors[category].bg} text-white`
                 : `bg-white ${categoryColors[category].text} border ${categoryColors[category].border} border-b-0`
@@ -43,7 +50,10 @@ export default function FoodMenu() {
 
       <ul className={cn("border rounded-xl flex flex-col items-start gap-1 grow", menuBorderColor)}>
         {foodMenu[categorySelection].map((section) => (
-          <li key={section.header} className="flex flex-col items-start w-full text-center gap-4 even:bg-menu p-4">
+          <li
+            key={section.header}
+            className="flex flex-col items-start w-full text-center gap-4 even:bg-menu p-4"
+          >
             <h2 className="text-xl font-semibold uppercase">{section.header}</h2>
 
             <ul className={cn("flex flex-col items-start gap-2 w-full")}>

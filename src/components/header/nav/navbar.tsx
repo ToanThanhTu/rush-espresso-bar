@@ -18,9 +18,8 @@ export default function NavBar() {
       <Link
         href={links[0].href}
         className={cn(
-          "h-12 basis-0 grow flex items-center justify-center",
-          "hover:bg-primary hover:text-white",
-          pathname === links[0].href ? "text-primary underline" : ""
+          "h-24 basis-0 grow flex items-center justify-center border-b-0 border-primary transition-all ease-in-out duration-200",
+          "hover:border-b-6",
         )}
       >
         <p>{links[0].name}</p>
@@ -29,9 +28,8 @@ export default function NavBar() {
       <Link
         href={links[1].href}
         className={cn(
-          "h-12 basis-0 grow flex items-center justify-center",
-          "hover:bg-primary hover:text-white",
-          pathname === links[1].href ? "text-primary underline" : ""
+          "h-24 basis-0 grow flex items-center justify-center border-b-0 border-primary transition-all ease-in-out duration-200",
+          "hover:border-b-6",
         )}
       >
         <p>{links[1].name}</p>
@@ -44,9 +42,8 @@ export default function NavBar() {
       <Link
         href={links[2].href}
         className={cn(
-          "h-12 basis-0 grow flex items-center justify-center",
-          "hover:bg-primary hover:text-white",
-          pathname === links[2].href ? "text-primary underline" : ""
+          "h-24 basis-0 grow flex items-center justify-center border-b-0 border-primary transition-all ease-in-out duration-200",
+          "hover:border-b-6",
         )}
       >
         <p>{links[2].name}</p>
@@ -55,9 +52,8 @@ export default function NavBar() {
       <Link
         href={links[3].href}
         className={cn(
-          "h-12 basis-0 grow flex items-center justify-center",
-          "hover:bg-primary hover:text-white",
-          pathname === links[3].href ? "text-primary underline" : ""
+          "h-24 basis-0 grow flex items-center justify-center border-b-0 border-primary transition-all ease-in-out duration-200",
+          "hover:border-b-6",
         )}
       >
         <p>{links[3].name}</p>

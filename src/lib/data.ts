@@ -1,5 +1,5 @@
 export const links = [
-  { name: "ABOUT", href: "/about" },
+  { name: "ABOUT US", href: "/about-us" },
   { name: "MENU", href: "/menu" },
   { name: "CONTACT US", href: "/contact-us" },
   { name: "JOBS", href: "/jobs" },
@@ -19,7 +19,9 @@ Welcome to your neighborhood café. 🌿☕
   jobs: `We are always looking for for hard-working and reliable people to join our team. If you like coffee and nice people drop us a line at`,
   phone: "(+61) 421 916 354",
   email: "rush.espresso.syd@gmail.com",
-  instagramId: "rush.espresso.bar",
   address: "162 Goulburn St, Surry Hills NSW 2010",
   hours: "6:30 am - 3:00 pm",
+  instagramId: "rush.espresso.bar",
+  ubereats: "https://www.ubereats.com/au/store/rush-espresso/nPPLsNGLW6Cc-xfF4tQD-Q?ps=1",
+  menulog: "https://www.menulog.com.au/restaurants-rush-espresso-bar-surry-hills/"
 }

@@ -54,11 +54,14 @@ export default {
           beverages: "hsl(var(--menu-beverage))",
           desserts: "hsl(var(--menu-dessert))",
         },
-      },
-      textShadow: {
-        sm: "0 1px 2px var(--primary)",
-        DEFAULT: "0 2px 4px var(--primary)",
-        lg: "0 8px 16px var(--primary)",
+        ubereats: {
+          DEFAULT: "hsl(var(--ubereats))",
+          foreground: "hsl(var(--ubereats-foreground))",
+        },
+        menulog: {
+          DEFAULT: "hsl(var(--menulog))",
+          foreground: "hsl(var(--menulog-foreground))",
+        }
       },
       borderRadius: {
         lg: "var(--radius)",
