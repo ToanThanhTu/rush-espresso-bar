@@ -24,6 +24,7 @@
     "embla-carousel-react": "^8.5.2",
     "google": "link:@next/third-parties/google",
     "lucide-react": "^0.484.0",
+    "motion": "^12.6.3",
     "next": "15.2.4",
     "nodemailer": "^6.9.16",
     "postcss": "^8.5.3",

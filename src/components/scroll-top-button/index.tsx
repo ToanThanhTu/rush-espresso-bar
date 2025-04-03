@@ -25,12 +25,13 @@ export default function ScrollTopButton() {
       onClick={() => window.scrollTo({ top: 0 })}
       className={cn(
         "fixed bottom-10 right-10 h-10 w-10 cursor-pointer rounded-full bg-primary text-secondary transition-opacity duration-300 ease-in-out z-50 opacity-0",
+        "hover:bg-secondary hover:text-primary hover:border-2 hover:border-primary",
         "sm:bottom-20 sm:right-20",
         "xl:h-12 xl:w-12",
         scroll > 140 ? "opacity-100" : "opactity-0"
       )}
     >
-      <ChevronUp />
+      <ChevronUp strokeWidth={3} />
     </Button>
   )
 }

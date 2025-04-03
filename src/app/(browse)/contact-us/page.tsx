@@ -7,6 +7,7 @@ import Information from "@/components/home/information"
 import { info } from "@/lib/data"
 import { cn } from "@/lib/utils"
 import Link from "next/link"
+import { motion } from "motion/react"
 
 export default function Page() {
   return (
@@ -17,7 +18,13 @@ export default function Page() {
       />
 
       <div className={cn("flex flex-col gap-8 px-4", "md:w-5/6 md:max-w-screen-md")}>
-        <ul className="list-disc text-muted-foreground border p-4 pl-10 rounded-xl">
+        <motion.ul
+          className="list-disc text-muted-foreground border p-4 pl-10 rounded-xl"
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <li>
             E-mail us at{" "}
             <Link href={`mailto:${info.email}`} target="_blank" className="underline">
@@ -43,19 +50,25 @@ export default function Page() {
           <li>Say hello</li>
           <li>Give us feedback</li>
           <li>Ask us a question</li>
-        </ul>
+        </motion.ul>
 
-        <div className="flex items-center gap-4">
+        <motion.div
+          className="flex items-center gap-4"
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          viewport={{ once: true, amount: 0.2 }}
+        >
           <div className={cn("w-full h-1 bg-muted")} />
           <span>or</span>
           <div className={cn("w-full h-1 bg-muted")} />
-        </div>
+        </motion.div>
 
         <ContactForm />
       </div>
 
-      <GoogleMapComponent />
       <Information />
+      <GoogleMapComponent />
     </main>
   )
 }

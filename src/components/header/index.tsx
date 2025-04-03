@@ -5,6 +5,7 @@ import NavBarMobile from "@/components/header/nav/navbar-mobile"
 import { cn } from "@/lib/utils"
 import { useEffect, useState } from "react"
 import Headroom from "react-headroom"
+import { motion } from "motion/react"
 
 export default function Header() {
   const [scroll, setScroll] = useState(0)
@@ -22,7 +23,12 @@ export default function Header() {
   }, [])
 
   return (
-    <div className="absolute w-full top-0 z-50">
+    <motion.div
+      className="absolute w-full top-0 z-50"
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.3 }}
+    >
       <Headroom>
         <header
           className={cn(
@@ -39,6 +45,6 @@ export default function Header() {
           </div>
         </header>
       </Headroom>
-    </div>
+    </motion.div>
   )
 }

@@ -1,5 +1,8 @@
+"use client"
+
 import HeroBanner from "@/components/hero-banner"
 import { info } from "@/lib/data"
+import { motion } from "motion/react"
 
 export default function Page() {
   return (
@@ -9,10 +12,16 @@ export default function Page() {
         title="Work With Us"
       />
 
-      <div className="space-y-2 max-w-screen-sm mx-4 p-4 border rounded-xl">
+      <motion.div
+        className="space-y-2 max-w-screen-sm mx-4 p-4 border rounded-xl"
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        viewport={{ once: true, amount: 0.2 }}
+      >
         <p className="text-darkGray">{info.jobs}</p>
         <p className="font-semibold">{info.email}</p>
-      </div>
+      </motion.div>
     </div>
   )
 }

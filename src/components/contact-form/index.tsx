@@ -1,9 +1,8 @@
 "use client"
 
 import { Input } from "@/components/shadcn/input"
-import { Label } from "@/components/shadcn/label"
-import { ContactFormData, ContactFormSchema } from "@/lib/types"
-import { cn, sendContactForm } from "@/lib/utils"
+import { ContactFormSchema } from "@/lib/types"
+import { cn } from "@/lib/utils"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -17,6 +16,7 @@ import {
 } from "@/components/shadcn/form"
 import { Textarea } from "@/components/shadcn/textarea"
 import { Button } from "@/components/shadcn/button"
+import { motion } from "motion/react"
 
 export default function ContactForm() {
   const contactForm = useForm<z.infer<typeof ContactFormSchema>>({
@@ -37,9 +37,13 @@ export default function ContactForm() {
 
   return (
     <Form {...contactForm}>
-      <form
+      <motion.form
         onSubmit={contactForm.handleSubmit(onSubmit)}
         className={cn("flex flex-col gap-4 p-4 border rounded-xl", "md:col-span-2")}
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        viewport={{ once: true, amount: 0.2 }}
       >
         <h2 className="text-2xl font-semibold">Send us a message</h2>
 
@@ -113,12 +117,8 @@ export default function ContactForm() {
           )}
         />
 
-          <Button
-            type="submit"
-          >
-            Submit
-          </Button>
-      </form>
+        <Button type="submit">Submit</Button>
+      </motion.form>
     </Form>
   )
 }
