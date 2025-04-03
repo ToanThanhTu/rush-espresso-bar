@@ -32,8 +32,8 @@ export default function Events() {
                 <CardContent className={cn("flex items-center justify-center px-4", "md:px-6")}>
                   <div className={cn("flex flex-col gap-8", "lg:flex-row")}>
                     <Image
-                      src={"https://placehold.co/500x700"}
-                      alt={`event 1`}
+                      src={event.image}
+                      alt={`event ${index + 1} image`}
                       width={500}
                       height={700}
                       className={cn("object-cover rounded-lg w-full", "lg:basis-0 grow")}
@@ -90,8 +90,8 @@ export default function Events() {
         </CarouselContent>
 
         <div className="flex items-center justify-between">
-          <CarouselPrevious className="relative translate-0 left-[calc(50%-40px)] translate-y-4" />
-          <CarouselNext className="relative translate-0 right-[calc(50%-40px)] translate-y-4" />
+          <CarouselPrevious className="relative translate-0 left-[calc(50%-40px)] translate-y-4 hover:cursor-pointer" />
+          <CarouselNext className="relative translate-0 right-[calc(50%-40px)] translate-y-4 hover:cursor-pointer" />
         </div>
       </Carousel>
     </motion.section>

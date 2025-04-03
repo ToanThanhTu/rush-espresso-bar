@@ -7,7 +7,7 @@ const events = [
     location: "Rush Espresso Bar in Surry Hills",
     price: "Entry: FREE (drinks & snacks included!)",
     highlight: "Chill chats & freestyle drawing time included!",
-    image: "https://placehold.co/500x700",
+    image: "/events/event-1.webp",
     link: "https://www.instagram.com/wa_lab_official/",
     linkText: "DM @wa_lab_official to join!",
     additionalInfo:
@@ -21,7 +21,7 @@ const events = [
     location: "International Student Lounge (located upstairs in Wentworth Building)",
     price: "Members = $5 | Non-members / Non-USU = $8",
     highlight: "Whether your cookies turn out cute 🥺 or cursed 👹, it’s all about the laughs and good vibes.",
-    image: "https://placehold.co/500x700",
+    image: "/events/event-2.webp",
     link: "https://www.instagram.com/wa_lab_official/",
     linkText: "DM @wa_lab_official to join!",
     additionalInfo:
