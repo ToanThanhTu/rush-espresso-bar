@@ -12,14 +12,13 @@ export default function NavBar() {
   return (
     <nav
       className={cn(
-        "w-full h-24 flex items-center justify-center gap-2 px-6 text-center font-semibold",
-        "lg:h-28"
+        "max-w-screen-md mx-auto flex items-center justify-center gap-6 text-center font-semibold"
       )}
     >
       <Link
         href={links[0].href}
         className={cn(
-          "h-full basis-0 grow flex items-center justify-center",
+          "h-12 basis-0 grow flex items-center justify-center",
           "hover:bg-primary hover:text-white",
           pathname === links[0].href ? "text-primary underline" : ""
         )}
@@ -30,7 +29,7 @@ export default function NavBar() {
       <Link
         href={links[1].href}
         className={cn(
-          "h-full basis-0 grow flex items-center justify-center",
+          "h-12 basis-0 grow flex items-center justify-center",
           "hover:bg-primary hover:text-white",
           pathname === links[1].href ? "text-primary underline" : ""
         )}
@@ -45,8 +44,8 @@ export default function NavBar() {
       <Link
         href={links[2].href}
         className={cn(
-          "h-full basis-0 grow flex items-center justify-center",
-          "xl:hover:underline",
+          "h-12 basis-0 grow flex items-center justify-center",
+          "hover:bg-primary hover:text-white",
           pathname === links[2].href ? "text-primary underline" : ""
         )}
       >
@@ -56,8 +55,8 @@ export default function NavBar() {
       <Link
         href={links[3].href}
         className={cn(
-          "h-full basis-0 grow flex items-center justify-center",
-          "xl:hover:underline",
+          "h-12 basis-0 grow flex items-center justify-center",
+          "hover:bg-primary hover:text-white",
           pathname === links[3].href ? "text-primary underline" : ""
         )}
       >

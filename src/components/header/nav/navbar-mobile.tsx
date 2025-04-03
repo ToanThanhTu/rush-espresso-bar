@@ -35,7 +35,7 @@ export default function NavBarMobile() {
         {!displayNavMenu && <Menu />}
       </button>
 
-      <Link href="/" className="scale-75">
+      <Link href="/">
         <RushLogo />
       </Link>
 
