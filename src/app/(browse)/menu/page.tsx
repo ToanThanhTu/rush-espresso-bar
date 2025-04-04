@@ -5,6 +5,7 @@ import Menu from "@/components/menu"
 import { cn } from "@/lib/utils"
 import { ArrowUpRight } from "lucide-react"
 import Link from "next/link"
+import { Suspense } from "react"
 
 export default function Page() {
   return (
@@ -42,7 +43,9 @@ export default function Page() {
         </div>
       </HeroBanner>
 
-      <Menu />
+      <Suspense>
+        <Menu />
+      </Suspense>
     </div>
   )
 }
