@@ -236,7 +236,7 @@ export const foodMenu: FoodMenu = {
 }
 
 export const beverages: BeverageMenu = {
-  Desserts: [
+  Dessert: [
     {
       header: "Desserts",
       items: [
@@ -263,7 +263,7 @@ export const beverages: BeverageMenu = {
       ],
     },
   ],
-  Beverages: [
+  Beverage: [
     {
       header: "Coffee",
       items: [

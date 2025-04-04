@@ -18,7 +18,7 @@ export default function NavBar() {
       <Link
         href={links[0].href}
         className={cn(
-          "h-24 basis-0 grow flex items-center justify-center border-b-0 border-primary transition-all ease-in-out duration-200",
+          "h-24 basis-0 grow flex items-center justify-center border-b-0 border-primary transition-all ease-linear duration-100",
           "hover:border-b-6",
         )}
       >
@@ -28,7 +28,7 @@ export default function NavBar() {
       <Link
         href={links[1].href}
         className={cn(
-          "h-24 basis-0 grow flex items-center justify-center border-b-0 border-primary transition-all ease-in-out duration-200",
+          "h-24 basis-0 grow flex items-center justify-center border-b-0 border-primary transition-all ease-linear duration-100",
           "hover:border-b-6",
         )}
       >
@@ -42,7 +42,7 @@ export default function NavBar() {
       <Link
         href={links[2].href}
         className={cn(
-          "h-24 basis-0 grow flex items-center justify-center border-b-0 border-primary transition-all ease-in-out duration-200",
+          "h-24 basis-0 grow flex items-center justify-center border-b-0 border-primary transition-all ease-linear duration-100",
           "hover:border-b-6",
         )}
       >
@@ -52,7 +52,7 @@ export default function NavBar() {
       <Link
         href={links[3].href}
         className={cn(
-          "h-24 basis-0 grow flex items-center justify-center border-b-0 border-primary transition-all ease-in-out duration-200",
+          "h-24 basis-0 grow flex items-center justify-center border-b-0 border-primary transition-all ease-linear duration-100",
           "hover:border-b-6",
         )}
       >

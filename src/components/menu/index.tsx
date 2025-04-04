@@ -5,11 +5,23 @@ import FoodMenu from "@/components/menu/foodMenu"
 import { Button } from "@/components/shadcn/button"
 import { MenuType } from "@/lib/types"
 import { cn } from "@/lib/utils"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { motion } from "motion/react"
+import { useSearchParams } from "next/navigation"
 
 export default function Menu() {
   const [menuSelection, setMenuSelection] = useState<MenuType>(MenuType.FOOD)
+
+  const searchParams = useSearchParams()
+  const params = searchParams.get("type")
+
+  useEffect(() => {
+    if (params === "beverage" || params === "dessert") {
+      setMenuSelection(MenuType.BEVERAGE)
+    } else {
+      setMenuSelection(MenuType.FOOD)
+    }
+  }, [searchParams])
 
   return (
     <motion.section

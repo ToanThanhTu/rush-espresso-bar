@@ -39,8 +39,8 @@ export enum FoodCategory {
 }
 
 export enum BeverageCategory {
-  BEVERAGES = "Beverages",
-  DESSERTS = "Desserts",
+  BEVERAGE = "Beverage",
+  DESSERT = "Dessert",
 }
 
 export type FoodMenu = {

@@ -54,13 +54,16 @@ export default function Footer() {
 
             <ul className="flex flex-col items-start">
               <li>
-                <Link href={"/menu/#food"} className="hover:underline">Food Menu</Link>
+                <Link href={"/menu?type=food"} className="hover:underline">Food Menu</Link>
               </li>
               <li>
-                <Link href={"/menu/#all-day-lunch"} className="hover:underline">All Day Lunch</Link>
+                <Link href={"/menu?type=all-day-lunch"} className="hover:underline">All Day Lunch</Link>
               </li>
               <li>
-                <Link href={"/menu/#beverage"} className="hover:underline">Beverage Menu</Link>
+                <Link href={"/menu?type=beverage"} className="hover:underline">Beverage Menu</Link>
+              </li>
+              <li>
+                <Link href={"/menu?type=dessert"} className="hover:underline">Dessert Menu</Link>
               </li>
             </ul>
           </article>

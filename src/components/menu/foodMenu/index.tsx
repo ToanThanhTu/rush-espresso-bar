@@ -2,11 +2,25 @@ import { Button } from "@/components/shadcn/button"
 import { foodMenu } from "@/lib/menu"
 import { FoodCategory } from "@/lib/types"
 import { cn } from "@/lib/utils"
-import { useState } from "react"
+import { useSearchParams } from "next/navigation"
+import { useEffect, useState } from "react"
 
 export default function FoodMenu() {
   const [categorySelection, setCategorySelection] = useState<FoodCategory>(FoodCategory.FOOD)
   const [menuBorderColor, setMenuBorderColor] = useState<string>("border-menu-food")
+  
+  const searchParams = useSearchParams()
+  const params = searchParams.get("type")
+
+  useEffect(() => {
+    if (params === "food") {
+      setCategorySelection(FoodCategory.FOOD)
+      setMenuBorderColor(categoryColors[FoodCategory.FOOD].border)
+    } else if (params === "all-day-lunch") {
+      setCategorySelection(FoodCategory.LUNCH)
+      setMenuBorderColor(categoryColors[FoodCategory.LUNCH].border)
+    }
+  }, [searchParams])
 
   const categoryColors = {
     [FoodCategory.FOOD]: {

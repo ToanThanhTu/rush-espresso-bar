@@ -2,22 +2,36 @@ import { Button } from "@/components/shadcn/button"
 import { beverages } from "@/lib/menu"
 import { BeverageCategory } from "@/lib/types"
 import { cn } from "@/lib/utils"
-import { useState } from "react"
+import { useSearchParams } from "next/navigation"
+import { useEffect, useState } from "react"
 
 export default function BeverageMenu() {
   const [categorySelection, setCategorySelection] = useState<BeverageCategory>(
-    BeverageCategory.BEVERAGES
+    BeverageCategory.BEVERAGE
   )
   const [menuBorderColor, setMenuBorderColor] = useState<string>("border-menu-beverages")
 
+  const searchParams = useSearchParams()
+  const params = searchParams.get("type")
+
+  useEffect(() => {
+    if (params === "beverage") {
+      setCategorySelection(BeverageCategory.BEVERAGE)
+      setMenuBorderColor(categoryColors[BeverageCategory.BEVERAGE].border)
+    } else if (params === "dessert") {
+      setCategorySelection(BeverageCategory.DESSERT)
+      setMenuBorderColor(categoryColors[BeverageCategory.DESSERT].border)
+    }
+  }, [searchParams])
+
   const categoryColors = {
-    [BeverageCategory.BEVERAGES]: {
+    [BeverageCategory.BEVERAGE]: {
       bg: "bg-menu-beverages",
       text: "text-menu-beverages",
       border: "border-menu-beverages",
       hover: "hover:bg-menu-beverages hover:text-white",
     },
-    [BeverageCategory.DESSERTS]: {
+    [BeverageCategory.DESSERT]: {
       bg: "bg-menu-desserts",
       text: "text-menu-desserts",
       border: "border-menu-desserts",
